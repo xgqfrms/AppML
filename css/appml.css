@@ -1,0 +1,359 @@
+﻿table.appmltable
+{
+border:none;
+font-family: verdana,helvetica,arial,sans-serif;
+font-size: 100%;
+text-align:left;
+}
+
+table.appmltable{
+	border-collapse:collapse;
+}
+
+table.appmltable tr:nth-child(odd)	{background-color:#F6F4F0;}
+table.appmltable tr:nth-child(even)	{background-color:#ffffff;}
+
+
+table.appmltable th
+{
+color:#ffffff;
+background-color:#555555;
+font-family: verdana,helvetica,arial,sans-serif;
+font-size: 13px;
+padding:1px 1px 1px 2px;
+padding:0px 2px 0px 2px;
+/*color:#DE636E;*/
+text-align:left;
+font-weight:bold;
+/*border:none;*/
+border:1px solid #555555;
+}
+
+table.appmltable td
+{
+/*background-color:#f6f6f6;*/
+border:1px solid #dfdfdf;
+font-size:13px;
+color:#555555;
+white-space:nowrap;
+padding-top:2px;
+padding-left:2px;
+padding-right:4px;
+line-height:22px;
+}
+
+table.appmltable a:link    {color:#555555; background-color:transparent}
+table.appmltable a:visited {color:#555555; background-color:transparent}
+table.appmltable a:active  {color:#DE636E; background-color:transparent}
+table.appmltable a:hover   {color:#DE636E; background-color:transparent}
+
+.appmlformout
+{
+border-top-right-radius:10px;
+margin-left:2px;
+margin-top:5px;
+padding-left:10px;
+padding-bottom:10px;
+width:500px;
+background-color:#f6f6f6;
+border:1px solid #dfdfdf;
+display:none;
+}
+
+.appmlform input
+{
+background-color:#ffffff;
+border:1px solid #e1e1e1;
+padding:3px;
+color:#333333;
+width:300px;
+font-family:Verdana;
+margin-bottom:10px;
+margin-right:10px;
+}
+
+.appmlform label
+{
+padding:2px;
+color:#333333;
+font-family:Palatino Linotype;
+display:block;
+}
+
+#recordnumberspan
+{
+border:1px solid #aaaaaa;
+border-radius:10px;
+text-align:center;
+background-color:#fafafa;
+font-family:arial;
+font-size:12px;
+width:120px;
+color:#333333;
+float:left;
+margin-top:9px;
+}
+
+button.appmlcmd
+{
+border:1px solid transparent;
+background:none;
+cursor:pointer;
+padding:0px;
+padding-right:2px;
+overflow:visible;
+margin:0px;
+font-size:100%;
+font-family: verdana, helvetica, arial, sans-serif;
+}
+
+button.cmddisabled				{opacity:0.3;}
+button.cmdfirst					{background-image:url('Images/appmlFirst.png');}
+button.cmdprevious				{background-image:url('Images/appmlPrevious.png');}
+button.cmdnext					{background-image:url('Images/appmlNext.png');}
+button.cmdlast					{background-image:url('Images/appmlLast.png');}
+button.cmddesign				{background-image:url('Images/appmlNew_32.png');}
+button.cmdfilter				{background-image:url('Images/appmlSearch_32.png');}
+button.cmdnew					{background-image:url('Images/appmlNew_32.png');}
+button.cmdreport				{background-image:url('Images/appmlReport_32.png');}
+button.cmdlist					{background-image:url('Images/appmlNew_32.png');}
+button.cmdsubmitline			{background-image:url('Images/appmlSave_20.png');}
+button.cmdsubmitline_new		{background-image:url('Images/appmlNew.png');}
+button.cmddeleteline			{background-image:url('Images/appmlDelete_20.png');}
+button.cmdsubmit				{background-image:url('Images/appmlSave_32.png');}
+button.cmddelete				{background-image:url('Images/appmlDelete_32.png');}
+button.cmdfolder				{background-image:url('Images/appmlFolder_14.png');}
+button.cmdemptylistview			{background-image:url('Images/appmlDelete_20.png');
+}
+
+button.cmdfolder,
+button.cmdsubmitline,
+button.cmdsubmitline_new,
+button.cmddeleteline
+{
+width:20px;
+cursor:pointer;
+background-repeat:no-repeat;
+}
+
+button.cmdfolder
+{
+background-position:-2px -3px;
+height:18px;
+color:transparent;
+}
+
+button.cmdsubmitline,
+button.cmdsubmitline_new,
+button.cmddeleteline
+{
+height:18px;
+}
+
+button.cmdreport,
+button.cmdsubmit,
+button.cmddelete,
+button.cmdnew,
+button.cmdfilter
+{
+height:47px;
+width:65px;
+font-size:12px;
+background-repeat:no-repeat;
+background-position:top center;
+padding:0px;
+padding-top:28px;
+color:transparent;
+}
+
+button.cmdfirst,
+button.cmdprevious,
+button.cmdnext,
+button.cmdlast
+{
+height:23px;
+width:23px;
+background-repeat:no-repeat;
+background-position:top center;
+padding:0px;
+float:left;
+margin-top:7px;
+color:transparent;
+}
+
+button.cmdlast
+{
+margin-right:20px;
+}
+
+button.cmdsubmit:hover,
+button.cmddelete:hover,
+button.cmdreport:hover,
+button.cmdlist:hover,
+button.cmdnew:hover,
+button.cmdfilter:hover,
+button.cmddesign:hover
+{
+color:#333333;
+}
+
+button.cmdfirst:hover, button.cmdprevious:hover, button.cmdnext:hover, button.cmdlast:hover
+{
+border:1px solid #aaaaaa;
+background-color:#aaaaaa;
+border-radius:25px;
+}
+
+#appmlDisplayCommands
+{
+margin-top:3px;
+}
+
+div.appmlclosebtn
+{
+width:17px;height:16px;
+border-radius:10px;
+background-color:#555555;
+color:#ffffff;
+float:right;
+text-align:center;
+font-family:verdana;
+font-size:12px;
+font-weight:bold;
+cursor:pointer;
+}
+
+div.appmlclosebtn:hover
+{
+background-color:#000000;
+}
+
+#message
+{
+font-family:verdana;
+font-size:11px;
+color:#DE636E;
+width:400px;
+padding-left:10px;
+padding-bottom:10px;
+position:absolute;
+display:none;
+background-color:#ffffff;
+border:1px solid #d3d3d3;
+border-top-right-radius:10px;
+opacity:0.9;
+}
+
+#message .appmlclosebtn
+{
+width:15px;height:14px;
+font-size:10px;
+}
+
+div#appmlquery
+{
+display:none;
+width:530px;
+background-color:#d3d3d3;
+background-color:rgba(200,200,200,0.85);
+border:1px solid #c3c3c3;
+border-top-right-radius:10px;
+font-size:12px;
+margin-bottom:20px;
+font-family:Verdana;
+}
+
+div.appmlqueryheader{
+width:511px;
+height:25px;
+height:30px;
+border-bottom:1px solid #c3c3c3;
+padding-top:7px;
+margin-left:5px;
+margin-top:10px;
+}
+
+#appmlquerycmdDIV{
+width:516px;
+text-align:right;
+height:25px;
+height:30px;
+position:absolute;
+z-index:1;
+}
+
+button.appmlquerycmd
+{
+border:1px solid #c3c3c3;
+background-color:#f1f1f1;
+cursor:pointer;
+padding:5px;
+overflow:visible;
+margin:0px;
+font-size:100%;
+font-family: verdana, helvetica, arial, sans-serif;
+}
+
+button.querycmdnew		{background-image:url('Images/appmlNew_20.png');}
+button.querycmdok		{background-image:url('Images/appmlSearch_20.png');}
+button.querycmdreset	{background-image:url('Images/appmlNew_20.png');}
+button.querycmdok		{background-image:url('Images/appmlSearch_20.png');}
+button.querycmdcalendar	{background-image:url('Images/appmlCalendar_21.png');}
+button.querycmdtreeview	{background-image:url('Images/appmlSearch_20.png');
+}
+
+button.querycmdreset,button.querycmdok
+{
+font-family:arial;
+font-size:14px;
+font-weight:bold;
+margin:0px;
+background-repeat:no-repeat;
+background-position:3px 3px;
+padding:5px;
+padding-bottom:6px;
+padding-left:25px;
+}
+
+button.querycmdreset:hover,button.querycmdok:hover
+{
+border:1px solid #c3c3c3;
+background-color:#ffffff;
+}
+
+div.appmlquerytab
+{
+padding-top:10px;
+padding-bottom:10px;
+padding-left:5px;
+padding-right:5px;
+width:504px;
+margin-left:5px;
+margin-bottom:5px;
+background-color:#f1f1f1;
+border:1px solid #c3c3c3;
+border-top:none;
+}
+
+div.appmlquerytabcmd {
+float:left;
+width:100px;
+height:20px;	
+padding-top:10px;
+padding-left:10px;
+padding-right:10px;	
+position:relative;
+z-index:2;				
+border-top:1px solid #999999;
+border-right:1px solid #999999;	
+border-left:1px solid #999999;		
+border:1px solid #c3c3c3;
+border-bottom:none;		
+background: #f1f1f1;
+margin-right:2px;
+font-family:verdana,arial;
+font-size:15px;
+color:#DE636E;
+font-weight:bold;
+}
+

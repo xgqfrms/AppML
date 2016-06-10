@@ -1,0 +1,14 @@
+<appml>
+	<datasource>
+		<database>
+		    <connection>Demo</connection>
+			    <sql>SELECT CustomerName,ContactName,City,Country FROM Customers</sql>
+		    <orderby>CustomerName</orderby>
+		</database>
+	</datasource>
+	<filters>
+		<query>
+			<field>CustomerName</field>
+		</query>
+	</filters>
+</appml> 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../css/appml.css">
+	<title>AppML</title>
+</head>
+<body>
+	<h1>My First Web Application</h1>
+	<table class="appmltable">
+	<tr>
+	  <th>Customer</th>
+	  <th>City</th>
+	  <th>Country</th>
+	</tr>
+	<tr>
+	  <td>Alfreds Futterkiste</td>
+	  <td>Berlin</td>
+	  <td>Germany</td>
+	</tr>
+	</table>
+	<script src="appml.js"></script>
+	<script>
+	app=new AppML("appml.htmlx","../models/Customers.xml");
+	app.run("Place01","Template01");
+	</script>
+</body>
+</html>
