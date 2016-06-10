@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="appml.css">
+<link rel="stylesheet" href="Demo.css">
+</head>
+
+<body>
+<h1>Products</h1>
+
+<div id="List01"></div>
+<div id="Form01"></div>
+
+<table id="Template01" class="appmltable" style="width:100%;display:none">
+<tr>
+  <th></th>
+  <th>Product Name</th>
+  <th>Category</th>
+  <th>Supplier</th>
+</tr>
+<tr id="appml_row">
+  <td style="cursor:pointer" onclick="productForm.run('Form01','Template02','#ProductID#')">
+  <img src="images/appmlPlus.png"></td>
+  <td>#ProductName#</td>
+  <td>#CategoryName#</td>
+  <td>#SupplierName#</td>
+</tr>
+</table>
+
+<div id="Template02" class="appmlform" style="width:100%;display:none">
+<label>ProductName:</label><input id="ProductName">
+<label>Supplier:</label>
+<select id="SupplierID" data-appmlapplication="Models/Dropdown_Suppliers">
+</select>
+<label>Category:</label>
+<select id="CategoryID" data-appmlapplication="Models/Dropdown_Categories">
+</select>
+<label>Unit:</label><input id="Unit">
+<label>Price:</label><input id="Price">
+</div>	
+
+<script src="appml.js"></script>
+<script>
+var products,productForm
+products=new AppML("appml.php","Models/Products");
+products.run("List01","Template01");
+productForm=new AppML("appml.php","Models/Products");
+productForm.displayType="form";
+</script>
+
+</body>
+</html>

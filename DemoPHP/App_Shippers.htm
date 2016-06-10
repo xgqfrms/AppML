@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="appml.css">
+<link rel="stylesheet" href="Demo.css">
+</head>
+
+<body>
+<h1>Shippers</h1>
+<div id="List01"></div><br>
+<div id="Form01"></div>
+
+<table id="Template01" class="appmltable" style="width:100%;display:none">
+<tr>
+  <th></th>
+  <th>Shipper</th>
+  <th>Phone</th>
+</tr>
+<tr id="appml_row">
+  <td style="cursor:pointer" onclick="shippersForm.run('Form01','','#ShipperID#')">
+  <img src="images/appmlPlus.png"></td>
+  <td>#ShipperName#</td>
+  <td>#Phone#</td>
+</tr>
+</table>	
+
+<script src="appml.js"></script>
+<script>
+var shippers,shippersForm;
+shippers=new AppML("appml.php","Models/Shippers");
+shippers.run("List01","Template01");
+shippersForm=new AppML("appml.php","Models/Shippers");
+shippersForm.displayType="form";
+</script>
+
+</body>
+</html>

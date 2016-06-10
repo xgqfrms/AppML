@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="appml.css">
+<link rel="stylesheet" href="Demo.css">
+</head>
+
+<body>
+<h1>OrderDetails</h1>
+<div id="appmlout"></div>
+<br>
+<div id="appmlForm"></div>
+
+<script src="appml.js"></script>
+<script>
+obj=new AppML("appml.php","Models/OrderDetails");
+obj.replaceHeader("OrderDetailID","");
+obj.formContainer="appmlForm";
+obj.run("appmlout");
+</script>
+
+</body>
+</html>

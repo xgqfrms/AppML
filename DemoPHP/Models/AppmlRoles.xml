@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<appml xsecurity="admin">
+
+<datasource>
+<database>
+<connection>AppmlSecurity</connection>
+<maintable>AppmlRoles</maintable>
+<keyfield>RoleID</keyfield>
+<sql>SELECT RoleID,Name FROM AppmlRoles</sql>
+<orderby>Name</orderby>
+</database>
+</datasource>
+
+<filters>
+<query>
+	<field>Name</field>
+</query>
+</filters>
+
+<update>
+<item><name>Name</name></item>
+</update>
+
+</appml>

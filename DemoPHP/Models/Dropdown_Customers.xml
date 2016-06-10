@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<appml>
+
+<datasource>
+<database>
+	<connection>Demo</connection>
+	<sql>SELECT CustomerID,CustomerName FROM Customers ORDER BY CustomerName</sql>
+</database>
+</datasource>
+
+</appml>

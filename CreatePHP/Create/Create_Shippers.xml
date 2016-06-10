@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<appml>
+<datasource>
+<database>
+<connection>Demo</connection>
+
+<execute>DROP TABLE Shippers</execute>
+
+<execute>CREATE TABLE Shippers (ShipperID INT NOT NULL AUTO_INCREMENT,PRIMARY KEY (ShipperID),ShipperName NVARCHAR(255),Phone NVARCHAR(255))</execute>
+<execute>INSERT INTO Shippers (ShipperID,ShipperName,Phone) VALUES (1,"Speedy Express","(503) 555-9831")</execute> 
+<execute>INSERT INTO Shippers (ShipperID,ShipperName,Phone) VALUES (2,"United Package","(503) 555-3199")</execute> 
+<execute>INSERT INTO Shippers (ShipperID,ShipperName,Phone) VALUES (3,"Federal Shipping","(503) 555-9931")</execute> 
+
+<sql>SELECT * FROM Shippers</sql>
+</database>
+</datasource>
+</appml> 

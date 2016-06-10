@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="appml.css">
+<link rel="stylesheet" href="Demo.css">
+</head>
+
+<body>
+<h1>Customers</h1>
+<div id="Form01"></div><br>
+<div id="List01"></div><br>
+<div id="Orders01"></div><br>
+
+<table id="Template01" class="appmltable" style="width:100%;display:none">
+<tr>
+<th></th>
+<th>Customer</th>
+<th>City</th>
+<th>Country</th>
+<th>Orders</th>
+</tr>
+<tr id="appml_row">
+<td style="cursor:pointer" onclick="openForm('#CustomerID#')">
+<img src="images/appmlPlus.png"></td>
+<td>#CustomerName#</td>
+<td>#City#</td>
+<td>#Country#</td>
+<td><a href='' onclick='openOrders("#CustomerID#");return false;'>Orders</a></td>
+</tr>
+</table> 
+
+<table id="Template02" class="appmltable" style="width:100%;display:none">
+<tr>
+<th>Customer</th>
+<th>Date</th>
+<th>Salesperson</th>
+<th>Shipper</th>
+</tr>
+<tr id="appml_row">
+<td>#CustomerName#</td>
+<td>#OrderDate#</td>
+<td>#Salesperson#</td>
+<td>#ShipperName#</td>
+</tr>
+</table> 
+
+<script src="appml.js"></script>
+<script>
+var customers,customerForm,orders;
+customers=new AppML("appml.php","Models/Customers");
+customers.run("List01","Template01");
+
+function openForm(id)
+{
+customerForm=new AppML("appml.php","Models/Customers");
+customerForm.displayType="form";
+customerForm.run("Form01","",id);
+}
+function openOrders(id)
+{
+orders=new AppML("appml.php","Models/Orders");
+orders.setQuery("orders.customerid",id);
+orders.commands=false;
+orders.run("Orders01","Template02");
+}
+</script>
+
+</body>
+</html>

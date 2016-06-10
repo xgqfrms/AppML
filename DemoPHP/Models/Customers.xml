@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<appml security="">
+
+<datasource>
+<database>
+<connection>Demo</connection>
+<maintable>Customers</maintable>
+<keyfield>CustomerID</keyfield>
+<sql>SELECT * FROM Customers</sql>
+<orderby>CustomerName,City,Country</orderby>
+</database>
+</datasource>
+
+<filters>
+<query>
+  <field label="Customer">CustomerName</field>
+  <field>City</field>
+  <field>Country</field>
+</query>
+<order>
+  <field label="Customer">CustomerName</field>
+  <field>City</field>
+  <field>Country</field>
+</order>
+</filters>
+
+<update security="admin">
+<item><name>CustomerName</name></item>
+<item><name>ContactName</name></item>
+<item><name>Address</name></item>
+<item><name>PostalCode</name></item>
+<item><name>City</name></item>
+<item><name>Country</name></item>
+</update>
+
+</appml>

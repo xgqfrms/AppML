@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<appml security="">
+
+<datasource>
+<database>
+<connection>Demo</connection>
+<maintable>OrderDetails</maintable>
+<keyfield>OrderDetailID</keyfield>
+<sql>SELECT OrderDetailID,Products.ProductName,Quantity FROM OrderDetails LEFT JOIN Products ON OrderDetails.ProductID=Products.ProductID</sql>
+<orderby>Products.ProductName</orderby>
+</database>
+</datasource>
+
+<filters>
+<query>
+  <field type="number">OrderDetails.ProductID</field>
+  <field type="number">OrderID</field>
+</query>
+</filters>
+
+<update security="admin">
+<item><name>ProductID</name></item>
+<item><name>OrderID</name></item>
+</update>
+
+</appml>

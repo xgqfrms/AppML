@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<appml>
+
+<datasource>
+<database>
+	<connection>AppmlSecurity</connection>
+	<sql>SELECT RoleID,Name FROM AppmlRoles</sql>
+</database>
+</datasource>
+
+</appml>

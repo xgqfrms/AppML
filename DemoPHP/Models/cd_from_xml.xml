@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<appml>
+
+<datasource>
+	<xmlfile src="cd_catalog.xml">
+		<record>CD</record>
+		<item>
+			<name>Title</name>
+			<nodename>TITLE</nodename>
+		</item>
+		<item>
+			<name>Artist</name>
+			<nodename>ARTIST</nodename>
+		</item>
+		<item>
+			<name>Country</name>
+			<nodename>COUNTRY</nodename>
+		</item>
+	</xmlfile>
+</datasource>
+
+</appml>

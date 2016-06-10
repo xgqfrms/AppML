@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<appml>
+
+<datasource>
+<database>
+<connection>AppmlSecurity</connection>
+<sql>SELECT DISTINCT UserID,Name FROM AppmlUsers ORDER BY Name</sql>
+</database>
+</datasource>
+
+</appml>

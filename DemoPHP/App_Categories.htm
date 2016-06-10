@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="appml.css">
+<link rel="stylesheet" href="Demo.css">
+</head>
+
+<body>
+<h1>Categories</h1>
+<div id="List01"></div><br>
+<div id="Form01"></div>
+
+<table id="Template01" class="appmltable" style="width:100%;display:none">
+<tr>
+  <th></th>
+  <th>Category</th>
+  <th>Description</th>
+</tr>
+<tr id="appml_row">
+  <td style="cursor:pointer" onclick="categoryForm.run('Form01','','#CategoryID#')">
+  <img src="images/appmlPlus.png"></td>
+  <td>#CategoryName#</td>
+  <td>#Description#</td>
+</tr>
+</table>	
+
+<script src="appml.js"></script>
+<script>
+var category,categoryForm
+category=new AppML("appml.php","Models/Categories");
+category.run("List01","Template01");
+categoryForm=new AppML("appml.php","Models/Categories");
+categoryForm.displayType="form";
+</script>
+
+</body>
+</html>

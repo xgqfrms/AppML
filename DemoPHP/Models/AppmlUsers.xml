@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<appml xsecurity="admin">
+
+<datasource>
+<database>
+<connection>AppmlSecurity</connection>
+<maintable>AppmlUsers</maintable>
+<keyfield>UserID</keyfield>
+<sql>SELECT UserID,Email,Name,Pass FROM AppmlUsers</sql>
+<orderby>Name,Email</orderby>
+</database>
+</datasource>
+
+<filters>
+<query>
+	<field label="E-mail">Email</field>
+	<field>Name</field>
+</query>
+</filters>
+
+<update>
+<item><name>Email</name></item>
+<item><name>Name</name></item>
+<item><name>Pass</name></item>
+</update>
+
+</appml>

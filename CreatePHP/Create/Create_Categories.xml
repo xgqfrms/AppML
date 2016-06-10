@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<appml>
+<datasource>
+<database>
+<connection>Demo</connection>
+
+<execute>DROP TABLE Categories</execute>
+
+<execute>CREATE TABLE Categories (CategoryID INT NOT NULL AUTO_INCREMENT,PRIMARY KEY (CategoryID),CategoryName NVARCHAR(255),Description NVARCHAR(255))</execute>
+<execute>INSERT INTO Categories (CategoryID,CategoryName,Description) VALUES ("1","Beverages","Soft drinks, coffees, teas, beers, and ales")</execute>
+<execute>INSERT INTO Categories (CategoryID,CategoryName,Description) VALUES ("2","Condiments","Sweet and savory sauces, relishes, spreads, and seasonings")</execute>
+<execute>INSERT INTO Categories (CategoryID,CategoryName,Description) VALUES ("3","Confections","Desserts, candies, and sweet breads")</execute>
+<execute>INSERT INTO Categories (CategoryID,CategoryName,Description) VALUES ("4","Dairy Products","Cheeses")</execute>
+<execute>INSERT INTO Categories (CategoryID,CategoryName,Description) VALUES ("5","Grains/Cereals","Breads, crackers, pasta, and cereal")</execute>
+<execute>INSERT INTO Categories (CategoryID,CategoryName,Description) VALUES ("6","Meat/Poultry","Prepared meats")</execute>
+<execute>INSERT INTO Categories (CategoryID,CategoryName,Description) VALUES ("7","Produce","Dried fruit and bean curd")</execute>
+<execute>INSERT INTO Categories (CategoryID,CategoryName,Description) VALUES ("8","Seafood","Seaweed and fish")</execute>
+
+<sql>SELECT * FROM Categories</sql>
+</database>
+</datasource>
+</appml>

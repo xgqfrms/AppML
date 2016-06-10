@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<appml security="">
+
+<datasource>
+<database>
+<connection>Demo</connection>
+<maintable>Products</maintable>
+<keyfield>ProductID</keyfield>
+<sql type="list">
+SELECT ProductID,ProductName,CategoryName,SupplierName
+FROM ((Products
+LEFT JOIN Suppliers ON Products.SupplierID=Suppliers.SupplierID)
+LEFT JOIN Categories ON Products.CategoryID=Categories.CategoryID)
+</sql>
+<sql type="form">SELECT * FROM Products</sql>
+<orderby>ProductName,CategoryName</orderby>
+</database>
+</datasource>
+
+<filters>
+<query>
+  <field label="Name">ProductName</field>
+  <field type="number" hidden="true">Products.SupplierID</field>
+  <field label="Supplier" application="Models/Dropdown_Suppliers">Suppliers.SupplierID</field>
+  <field label="Category" application="Models/Dropdown_Categories">Categories.CategoryID</field>
+</query>
+</filters>
+
+<update security="admin">
+<item><name>ProdoctName</name></item>
+<item><name>SupplierID</name></item>
+<item><name>CategoryID</name></item>
+<item><name>Unit</name></item>
+<item><name>Price</name></item>
+</update>
+
+</appml>

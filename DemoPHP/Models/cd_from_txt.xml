@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<appml>
+
+<datasource>
+	<csvfile src="cd_catalog.txt">
+		<item>
+			<name>Title</name>
+			<index>1</index>
+		</item>
+		<item>
+			<name>Artist</name>
+			<index>2</index>
+		</item>
+		<item>
+			<name>Price</name>
+			<index>5</index>
+		</item>
+	</csvfile>
+</datasource>
+
+</appml>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="appml.css">
+<link rel="stylesheet" href="Demo.css">
+</head>
+
+<body>
+<h1>Demo Application</h1>
+
+<button onclick="window.open('App_Customers.htm')">Customers</button>
+<button onclick="window.open('App_Products.htm')">Products</button>
+<button onclick="window.open('App_Suppliers.htm')">Suppliers</button>
+<button onclick="window.open('App_Shippers.htm')">Shippers</button>
+<button onclick="window.open('App_Categories.htm')">Categories</button>
+<button onclick="window.open('App_Employees.htm')">Employees</button>
+<button onclick="window.open('App_Orders.htm')">Orders</button>
+<button onclick="window.open('App_AppmlUsers.htm')">Users</button>
+<button onclick="window.open('App_AppmlRoles.htm')">Roles</button>
+<button onclick="window.open('App_AppmlUserRoles.htm')">Users/Roles</button>
+<button onclick="login()">Login</button>
+
+<script src="appml.js"></script>
+<script>
+function login()
+{
+var app_obj
+app_obj=new AppML("appml.php");
+app_obj.login();
+}
+</script>
+
+</body>
+</html>

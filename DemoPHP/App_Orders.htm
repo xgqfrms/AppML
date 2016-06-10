@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Orders</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="appml.css">
+<link rel="stylesheet" href="Demo.css">
+</head>
+
+<body>
+<h1>Orders</h1>
+<div id="List01"></div><br>
+<div id="Form01"></div><br>
+<div id="Details"></div>
+
+<table id="Template01" class="appmltable" style="width:100%;display:none">
+<tr>
+  <th></th>
+  <th>Customer</th>
+  <th>Date</th>
+  <th>Salesperson</th>
+  <th>Shipper</th>
+  <th></th>
+</tr>
+<tr id="appml_row">
+  <td style="cursor:pointer" onclick="openForm('#OrderID#')">
+  <img src="images/appmlPlus.png"></td>
+  <td>#CustomerName#</td>
+  <td>#OrderDate#</td>
+  <td>#Salesperson#</td>
+  <td>#ShipperName#</td>
+  <td><a href='' onclick='openOrderDetails("#OrderID#");return false;'>Details</a></td>
+</tr>
+</table>	
+
+<div id="Template02" class="appmlform" style="width:100%;display:none">
+<label>Customer:</label>
+<select id="CustomerID" data-appmlapplication="Models/Dropdown_Customers">
+</select>
+<label>Employee:</label>
+<select id="EmployeeID" data-appmlapplication="Models/Dropdown_Employees">
+</select>
+<label>Date of Order:</label><input id="OrderDate">
+<label>Shipper:</label>
+<select id="ShipperID" data-appmlapplication="Models/Dropdown_Shippers">
+</select>
+</div>	
+
+<table id="Template03" class="appmltable" style="width:100%;display:none">
+<tr>
+  <th>Product</th>
+  <th>Quantity</th>
+  <th></th>
+</tr>
+<tr id="appml_row">
+  <td>#ProductName#</td>
+  <td>#Quantity#</td>
+</tr>
+</table>	
+
+<script src="appml.js"></script>
+<script>
+var Orders,ordesForm,Details;
+Orders=new AppML("appml.php","Models/Orders");
+Orders.run("List01","Template01");
+
+function openForm(id)
+{
+ordersForm=new AppML("appml.php","Models/Orders");
+ordersForm.displayType="form";
+ordersForm.run("Form01","Template02",id);
+}
+function openOrderDetails(id)
+{
+Details=new AppML("appml.php","Models/OrderDetails");
+Details.setQuery("OrderID",id);
+Details.commands=false;
+Details.run("Details","Template03");
+}
+</script>
+
+</body>
+</html>

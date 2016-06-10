@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<appml security="">
+
+<datasource>
+<database>
+<connection>Demo</connection>
+<maintable>Orders</maintable>
+<keyfield>OrderID</keyfield>
+<sql type="list">
+SELECT OrderID,CustomerName,OrderDate,CONCAT(Employees.FirstName,' ',Employees.Lastname) AS Salesperson,ShipperName
+FROM (((Orders
+LEFT JOIN Customers ON Orders.CustomerID=Customers.CustomerID)
+LEFT JOIN Employees ON Orders.EmployeeID=Employees.EmployeeID)
+LEFT JOIN Shippers ON Orders.ShipperID=Shippers.ShipperID)
+</sql>
+<sql type="form">SELECT * FROM Orders</sql>
+<orderby>CustomerName</orderby>
+</database>
+</datasource>
+
+<filters>
+<query>
+  <field type="number" hidden="true">Orders.CustomerID</field>
+  <field label="Customer">Customers.CustomerName</field>
+  <field label="Employee">Employees.LastName</field>
+  <field label="Shipper" type="number" application="Models/Dropdown_Shippers">Shippers.ShipperID</field>
+</query>
+</filters>
+
+<update security="admin">
+<item><name>CustomerID</name></item>
+<item><name>OrderID</name></item>
+<item><name>ShipperID</name></item>
+<item><name>OrderDate</name></item>
+</update>
+
+</appml>

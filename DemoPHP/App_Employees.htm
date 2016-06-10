@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="appml.css">
+<link rel="stylesheet" href="Demo.css">
+</head>
+
+<body>
+<h1>Employees</h1>
+
+<div id="Form01"></div>
+<div id="List01"></div>
+
+<table id="Template01" class="appmltable" style="width:100%;display:none">
+<tr>
+  <th></th>
+  <th>Last Name</th>
+  <th>First Name</th>
+  <th>Date of Birth</th>
+</tr>
+<tr id="appml_row">
+  <td style="cursor:pointer" onclick="openForm('#EmployeeID#')">
+  <img src="images/appmlPlus.png"></td>
+  <td>#LastName#</td>
+  <td>#FirstName#</td>
+  <td>#BirthDate#</td>
+</tr>
+</table>
+
+<div id="Template02" class="appmlform" style="width:100%;display:none">
+<label>Last Name:</label><input id="LastName">
+<label>First Name:</label><input id="FirstName">
+<label>Date of Birth:</label><input id="BirthDate">
+<label>Photo:</label><input id="Photo">
+<label>Notes:</label><input id="Notes">
+</div>	
+
+<script src="appml.js"></script>
+<script>
+var Employees,employeesForm
+Employees=new AppML("appml.php","Models/Employees");
+Employees.run("List01","Template01");
+
+function openForm(id)
+{
+employeesForm=new AppML("appml.php","Models/Employees");
+employeesForm.displayType="form";
+employeesForm.run("Form01","Template02",id);
+}
+</script>
+
+</body>
+</html>

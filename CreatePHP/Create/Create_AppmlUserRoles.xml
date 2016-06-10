@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<appml>
+<datasource>
+<database>
+<connection>AppmlSecurity</connection>
+
+<execute>DROP TABLE AppmlUserRoles</execute>
+
+<execute>CREATE TABLE AppmlUserRoles (UserRoleID INT NOT NULL AUTO_INCREMENT,PRIMARY KEY (UserRoleID),UserID INT,RoleID INT)</execute>
+<execute>INSERT INTO AppmlUserRoles (UserRoleID,UserID,RoleID) VALUES (1,1,1)</execute>
+<execute>INSERT INTO AppmlUserRoles (UserRoleID,UserID,RoleID) VALUES (2,2,2)</execute>
+<execute>INSERT INTO AppmlUserRoles (UserRoleID,UserID,RoleID) VALUES (3,3,3)</execute>
+
+<sql>SELECT * FROM AppmlUserRoles)</sql>
+</database>
+</datasource>
+</appml>

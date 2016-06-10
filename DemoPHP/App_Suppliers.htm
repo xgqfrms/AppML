@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="appml.css">
+<link rel="stylesheet" href="Demo.css">
+</head>
+
+<body>
+<h1>Suppliers</h1>
+<div id="Form01"></div><br>
+<div id="List01"></div><br>
+<div id="Products"></div>
+
+<table id="Template01" class="appmltable" style="width:100%;display:none">
+<tr>
+  <th></th>
+  <th>Supplier</th>
+  <th>City</th>
+  <th>Country</th>
+  <th></th>
+</tr>
+<tr id="appml_row">
+  <td style="cursor:pointer" onclick="suppliersForm.run('Form01','','#SupplierID#')">
+  <img src="images/appmlPlus.png"></td>
+  <td>#SupplierName#</td>
+  <td>#City#</td>
+  <td>#Country#</td>
+  <td><a href='' onclick='openProducts("#SupplierID#");return false;'>Products</a></td>
+</tr>
+</table>	
+
+<div id="Template02" style="display:none">
+<h2>#SupplierName#</h2>
+<table class="appmltable" style="width:100%">
+<tr>
+  <th>Product</th>
+  <th>Category</th>
+  <th>Supplier</th>
+</tr>
+<tr id="appml_row">
+  <td>#ProductName#</td>
+  <td>#CategoryName#</td>
+  <td>#SupplierName#</td>
+</tr>
+</table>
+</div>
+
+<script src="appml.js"></script>
+<script>
+var suppliersList,suppliersForm,Products;
+suppliersList=new AppML("appml.php","Models/Suppliers");
+suppliersList.run("List01","Template01");
+suppliersForm=new AppML("appml.php","Models/Suppliers");
+suppliersForm.displayType="form";
+
+function openProducts(id)
+{
+products=new AppML("appml.php","Models/Products");
+products.setQuery("Products.SupplierID",id);
+products.commands=false;
+products.run("Products","Template02");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<appml xsecurity="admin">
+
+<datasource>
+<database>
+<connection>AppmlSecurity</connection>
+<maintable>AppmlUserRoles</maintable>
+<keyfield>UserRoleID</keyfield>
+<sql>
+SELECT AppmlUserRoles.UserRoleID,AppmlUserRoles.UserID,AppmlUserRoles.RoleID,AppmlUsers.Name AS u,AppmlRoles.Name AS g
+FROM ((AppmlUserRoles
+LEFT JOIN AppmlUsers ON AppmlUserRoles.UserID=AppmlUsers.UserID)
+LEFT JOIN AppmlRoles ON AppmlUserRoles.RoleID=AppmlRoles.RoleID)
+</sql>
+<orderby>Users_RolesID</orderby>
+</database>
+</datasource>
+
+<filters>
+<query>
+	<field label="User ID">AppmlUsers.UserID</field>
+	<field label="Group ID">AppmlRoles.RoleID</field>
+</query>
+</filters>
+
+<update>
+<item><name>UserID</name></item>
+<item><name>RoleID</name></item>
+</update>
+
+</appml>

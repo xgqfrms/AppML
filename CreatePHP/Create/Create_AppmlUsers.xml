@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<appml>
+<datasource>
+<database>
+<connection>AppmlSecurity</connection>
+
+<execute>DROP TABLE AppmlUsers</execute>
+
+<execute>CREATE TABLE AppmlUsers (UserID INT NOT NULL AUTO_INCREMENT,PRIMARY KEY (UserID),Email NVARCHAR(255),Name NVARCHAR(255),Pass NVARCHAR(255))</execute> 
+<execute>INSERT INTO AppmlUsers (UserID,Email,Name,Pass) VALUES (1,"admin@somewhere.com","admin","admin")</execute>
+<execute>INSERT INTO AppmlUsers (UserID,Email,Name,Pass) VALUES (2,"user@somewhere.com","user","user")</execute>
+<execute>INSERT INTO AppmlUsers (UserID,Email,Name,Pass) VALUES (3,"guest@somewhere.com","guest","guest")</execute>
+
+<sql>SELECT * FROM AppmlUsers</sql>
+</database>
+</datasource>
+</appml>

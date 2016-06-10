@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="appml.css">
+<link rel="stylesheet" href="Demo.css">
+</head>
+<body>
+
+<h3>Roles:</h3>
+<div id="rolesDIV"></div>
+<div id="rolesFormDIV"></div>
+
+<table id="roleslist" style="display:none" class="appmltable">
+<tr><th>ID</th><th>Name</th></tr>
+<tr id="appml_row">
+<td style="cursor:pointer" onclick="rolesForm.run('rolesFormDIV','rolesform','#RoleID#')">
+<img src="images/appmlPlus.png"></td>
+<td>#Name#</td></tr>
+</table>
+<div style="display:none" id="rolesform" class="appmlform">
+	<label for="name">name:</label><input id="name" value="#Name#">
+</div>
+
+<script src="appml.js"></script>
+<script>
+var roles=new AppML("appml.php","Models/AppmlRoles");
+roles.run("rolesDIV","roleslist");
+var rolesForm = new AppML("appml.php","Models/AppmlRoles");
+rolesForm.displayType = "form";
+rolesForm.list = roles;	
+</script>
+
+</body>
+</html>

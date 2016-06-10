@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<appml>
+
+<datasource>
+<database>
+	<connection>Demo</connection>
+	<sql>SELECT ShipperID,ShipperName FROM Shippers ORDER BY ShipperName</sql>
+</database>
+</datasource>
+
+</appml>

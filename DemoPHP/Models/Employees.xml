@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<appml security="">
+
+<datasource>
+<database>
+<connection>Demo</connection>
+<maintable>Employees</maintable>
+<keyfield>EmployeeID</keyfield>
+<sql>SELECT * FROM Employees</sql>
+<orderby>LastName,FirstName</orderby>
+</database>
+</datasource>
+
+<filters>
+<query>
+  <field>LastName</field>
+  <field>FirstName</field>
+</query>
+</filters>
+
+<update security="admin">
+<item><name>LastName</name></item>
+<item><name>FirstName</name></item>
+<item><name>BirthDate</name></item>
+<item><name>Photo</name></item>
+<item><name>Notes</name></item>
+</update>
+
+</appml>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<appml security="">
+
+<datasource>
+<database>
+<connection>Demo</connection>
+<maintable>Categories</maintable>
+<keyfield>CategoryID</keyfield>
+<sql>SELECT * FROM Categories</sql>
+</database>
+</datasource>
+
+<update security="">
+<item><name>CategoryName</name></item>
+<item><name>Description</name></item>
+</update>
+
+</appml>

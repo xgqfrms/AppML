@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="appml.css" />
+</head>
+
+<body>
+<h1>Create Database Tables !!!</h1>
+
+<button onclick='myOpen("Customers")'>Customers</button>
+<button onclick='myOpen("Products")'>Products</button>
+<button onclick='myOpen("Suppliers")'>Suppliers</button>
+<button onclick='myOpen("Shippers")'>Shippers</button>
+<button onclick='myOpen("Categories")'>Categories</button>
+<button onclick='myOpen("Employees")'>Employees</button>
+<button onclick='myOpen("Orders")'>Orders</button>
+<button onclick='myOpen("OrderDetails")'>OrderDetails</button>
+<br><br>
+
+<div id="Place01"></div>
+
+<script src="appml.js"></script>
+<script>
+function myOpen(pname)
+{
+var app_obj
+app_obj=new AppML("appml.aspx","Create/Create_" + pname);
+app_obj.run("Place01");
+}
+</script>
+
+</body>
+</html>

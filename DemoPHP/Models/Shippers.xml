@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<appml security="">
+
+<datasource>
+<database>
+<connection>Demo</connection>
+<maintable>Shippers</maintable>
+<keyfield>ShipperID</keyfield>
+<sql>SELECT * FROM Shippers</sql>
+</database>
+</datasource>
+
+<update security="admin">
+<item><name>ShipperName</name></item>
+<item><name>Phone</name></item>
+</update>
+
+</appml>

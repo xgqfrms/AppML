@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="appml.css">
+<link rel="stylesheet" href="Demo.css">
+</head>
+<body>
+
+<h3>Users:</h3>
+<div id="usersDIV"></div>
+<div id="usersFormDIV"></div>
+
+<table style="display:none;" id="userslist" class="appmltable">
+<tr><th>ID</th><th>E-mail</th><th>Name</th></tr>
+<tr id="appml_row">
+<td style="cursor:pointer" onclick="usersForm.run('usersFormDIV','usersform','#UserID#')">
+<img src="images/appmlPlus.png"></td>
+<td>#Email#</td>
+<td>#Name#</td>
+</tr></table>
+<div style="display:none;" id="usersform" class="appmlform">
+	<label>E-mail:</label><input id="Email" value="#Email#">
+	<label>Name:</label><input id="Name" value="#Name#">
+	<label>Password:</label><input id="Password" type="password" value="#Password#">
+</div>
+
+<script src="appml.js"></script>
+<script>
+var users=new AppML("appml.php","Models/AppmlUsers");
+users.run("usersDIV","userslist");
+
+var usersForm = new AppML("appml.php","Models/AppmlUsers");
+usersForm.displayType = "form";
+usersForm.list = users;	
+</script>
+
+</body>
+</html>

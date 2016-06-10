@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<appml security="">
+
+<datasource>
+<database>
+<connection>Demo</connection>
+<maintable>Suppliers</maintable>
+<keyfield>SupplierID</keyfield>
+<sql>SELECT * FROM Suppliers</sql>
+<orderby>SupplierName</orderby>
+</database>
+</datasource>
+
+<filters>
+<query>
+  <field>SupplierName</field>
+  <field>City</field>
+  <field>Country</field>
+</query>
+</filters>
+
+<update security="admin">
+<item><name>SupplierID</name></item>
+<item><name>SupplierName</name></item>
+<item><name>ContactName</name></item>
+<item><name>Adress</name></item>
+<item><name>PostalCode</name></item>
+<item><name>City</name></item>
+<item><name>Country</name></item>
+<item><name>Phone</name></item>
+</update>
+
+</appml>
